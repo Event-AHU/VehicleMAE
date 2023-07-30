@@ -1,4 +1,10 @@
-# VehicleMAE 
+
+<p align="center">
+  <img width="100%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/logo.png" alt="firstIMG"/>
+</p> 
+
+
+
 Official PyTorch implementation of 
 
 
