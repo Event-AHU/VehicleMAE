@@ -5,11 +5,16 @@ Official PyTorch implementation of
 
 ## Abstract 
 
+<p align="center">
+  <img width="100%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/firstIMG.jpg" alt="firstIMG"/>
+</p> 
+
+
 
 ## Our Proposed Framework VehicleMAE  
 
 <p align="center">
-  <img width="90%" src="" alt="Framework"/>
+  <img width="100%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/framework.jpg" alt="framework"/>
 </p> 
 
 ## Environment Setting 
@@ -18,6 +23,10 @@ Official PyTorch implementation of
 ## Dataset Download 
 
 
+<p align="center">
+  <img width="100%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/data_show.jpg" alt="data_show"/>
+</p> 
+
 
 ## Training and Testing 
 
@@ -25,9 +34,12 @@ Official PyTorch implementation of
 ## Experimental Results 
 
 <p align="center">
-  <img width="90%" src="" alt="feature_vis"/>
+  <img width="80%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/reconst_vis.jpg" alt="reconst_vis"/>
 </p> 
 
+<p align="center">
+  <img width="80%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/attentionmaps.jpg" alt="attentionmaps"/>
+</p> 
 
 
 ## Acknowledgement 
