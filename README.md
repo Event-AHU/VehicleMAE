@@ -1,11 +1,12 @@
 
 <p align="center">
-  <img width="50%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/logo.png" alt="firstIMG"/>
+  <img width="50%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/logo.jpg" alt="firstIMG"/>
 </p> 
 
 
 
-Official PyTorch implementation of 
+Official PyTorch implementation of **Structural Information Guided Multimodal Pre-training for Vehicle-centric Perception**, Xiao Wang, Wentao Wu, Chenglong Li, Zhicheng Zhao, Zhe Chen, Yukai Shi, Jin Tang, AAAI-2024 
+[[Paper]()] 
 
 
 
