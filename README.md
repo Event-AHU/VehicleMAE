@@ -53,6 +53,8 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   <img width="80%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/attentionmaps.jpg" alt="attentionmaps"/>
 </p> 
 
+
+<p align="center">
 <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="668" style="width:501.25pt;border-collapse:collapse;border:none">
  <tbody><tr style="height:16.4pt">
   <td width="107" rowspan="2" valign="top" style="width:80.0pt;border:solid windowtext 1.0pt;
@@ -480,6 +482,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   </td>
  </tr>
 </tbody></table>
+</p> 
 
 ## Acknowledgement 
 
