@@ -46,13 +46,13 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
 
 ## Experimental Results 
 
-<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="610" style="width: 610px;border-collapse:collapse;border:none;height: 200px;">
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="620" style="width: 620px;border-collapse:collapse;border:none;height: 200px;">
  <tbody><tr style="height:15.6pt">
   <td width="95" rowspan="2" valign="top" style="width:71.05pt;border:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="margin-top:12.0pt;text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Method</span></b></p>
   </td>
-  <td width="94" rowspan="2" valign="top" style="width:80.15pt;border:solid windowtext 1.0pt;
+  <td width="94" rowspan="2" valign="top" style="width:90.15pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="margin-top:12.0pt;text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Dataset</span></b></p>
   </td>
@@ -120,7 +120,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.95pt">
   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Scratch</span></b></p>
   </td>
-  <td width="94" valign="top" style="width:80.15pt;border-top:none;border-left:
+  <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.95pt">
   <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">-</span></p>
@@ -171,7 +171,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">MoCov3</span></b></p>
   </td>
-  <td width="94" valign="top" style="width:80.15pt;border-top:none;border-left:
+  <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet-1K</span></p>
@@ -222,7 +222,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">DINO</span></b></p>
   </td>
-  <td width="94" valign="top" style="width:80.15pt;border-top:none;border-left:
+  <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet-1K</span></p>
@@ -273,7 +273,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">IBOT</span></b></p>
   </td>
-  <td width="94" valign="top" style="width:80.15pt;border-top:none;border-left:
+  <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet-1K</span></p>
@@ -324,7 +324,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.95pt">
   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">MAE</span></b></p>
   </td>
-  <td width="94" valign="top" style="width:80.15pt;border-top:none;border-left:
+  <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.95pt">
   <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet-1K</span></p>
@@ -375,7 +375,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">MAE</span></b></p>
   </td>
-  <td width="94" valign="top" style="width:80.15pt;border-top:none;border-left:
+  <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Autobot1M</span></p>
@@ -426,7 +426,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">VehicleMAE</span></b></p>
   </td>
-  <td width="94" valign="top" style="width:80.15pt;border-top:none;border-left:
+  <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
   <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Autobot1M</span></p>
