@@ -83,24 +83,9 @@ class ClipBaseModel(nn.Module):
         temp = 1
         input = F.log_softmax(logits_mae/temp, dim=-1)
         target = F.softmax(logits_clip/temp, dim=-1)
+        input_2 = F.softmax(logits_mae/temp, dim=0) 
         #target = F.log_softmax(logits_clip, dim=-1)
-        kl_distance_loss = kl_loss(input, target)
-
-        '''
-        representations = torch.cat([image_features_l2, image_features], dim=0)
-        similarity_matrix = F.cosine_similarity(representations.unsqueeze(1), representations.unsqueeze(0), dim=2)
-        #if self.verbose: print("Similarity matrix\n", similarity_matrix, "\n")
-
-        sim_ij = torch.diag(similarity_matrix, self.batch_size)
-        sim_ji = torch.diag(similarity_matrix, -self.batch_size)
-        positives = torch.cat([sim_ij, sim_ji], dim=0)
-        
-        nominator = torch.exp(positives / self.temperature)
-        denominator = self.negatives_mask * torch.exp(similarity_matrix / self.temperature)
-    
-        loss_partial = -torch.log(nominator / torch.sum(denominator, dim=1))
-        loss = torch.sum(loss_partial) / (2 * self.batch_size)
-        '''
+        kl_distance_loss = kl_loss(input, target)-torch.mean(input_2 * torch.log2(input_2))
 
         return similarity_loss,kl_distance_loss
 
