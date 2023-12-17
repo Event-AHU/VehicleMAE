@@ -174,7 +174,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet-1K</span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet1K</span></p>
   </td>
   <td width="57" valign="top" style="width:42.55pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -225,7 +225,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet-1K</span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet1K</span></p>
   </td>
   <td width="57" valign="top" style="width:42.55pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -276,7 +276,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet-1K</span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet1K</span></p>
   </td>
   <td width="57" valign="top" style="width:42.55pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -327,7 +327,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   <td width="94" valign="top" style="width:90.15pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.95pt">
-  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet-1K</span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">Imagenet1K</span></p>
   </td>
   <td width="57" valign="top" style="width:42.55pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
