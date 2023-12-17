@@ -43,16 +43,8 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
 
 ## Training and Testing 
 
+
 ## Experimental Results 
-
-<p align="center">
-  <img width="80%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/reconst_vis.jpg" alt="reconst_vis"/>
-</p> 
-
-<p align="center">
-  <img width="80%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/attentionmaps.jpg" alt="attentionmaps"/>
-</p> 
-
 <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="668" style="width:501.25pt;border-collapse:collapse;border:none">
  <tbody><tr style="height:16.4pt">
   <td width="107" rowspan="2" valign="top" style="width:80.0pt;border:solid windowtext 1.0pt;
@@ -480,6 +472,16 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
   </td>
  </tr>
 </tbody></table>
+
+## Visual Results 
+
+<p align="center">
+  <img width="80%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/reconst_vis.jpg" alt="reconst_vis"/>
+</p> 
+
+<p align="center">
+  <img width="80%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/attentionmaps.jpg" alt="attentionmaps"/>
+</p> 
 
 ## Acknowledgement 
 
