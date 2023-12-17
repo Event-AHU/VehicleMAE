@@ -37,7 +37,9 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
 ## Pre-trained Model Download
  Pre-trained Model  | Vit-base 
  ---- | -----  
- Pre-trained checkpoint  | download
+ Pre-trained checkpoint  | [download](https://pan.baidu.com/s/1wB2QdzItdVVYQQ491ZOOrA?pwd=6zkx)
+ Extracted code |6zkx
+
 
 ## Training and Testing 
 
