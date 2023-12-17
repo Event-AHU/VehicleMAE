@@ -359,7 +359,7 @@ def train_vehicle(args):
             teacher=teacher,
             optimizer=optimizer,
             fp16_scaler=fp16_scaler,
-            ibot_loss=VehicleMAE_loss,
+            vehiclemae_loss=VehicleMAE_loss,
         )
     start_epoch = to_restore["epoch"]
 
@@ -384,7 +384,7 @@ def train_vehicle(args):
             'optimizer': optimizer.state_dict(),
             'epoch': epoch + 1,
             'args': args,
-            'vehiclemae_loss': VehicleMAE_loss.state_dict(),
+            'VehicleMAE_loss': VehicleMAE_loss.state_dict(),
         }
         if fp16_scaler is not None:
             save_dict['fp16_scaler'] = fp16_scaler.state_dict()
