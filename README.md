@@ -33,10 +33,11 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
 <p align="center">
   <img width="100%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/data_show.jpg" alt="data_show"/>
 </p> 
-
+## Pre-trained model Download 
+Backbone|Vit-base | 
+Pre-trained model| |
 
 ## Training and Testing 
-
 
 ## Experimental Results 
 
