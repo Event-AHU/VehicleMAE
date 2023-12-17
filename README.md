@@ -46,7 +46,7 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
 
 ## Experimental Results 
 
-<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="600" style="width: 600px;border-collapse:collapse;border:none;height: 190px;">
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="620" style="width: 600px;border-collapse:collapse;border:none;height: 190px;">
  <tbody><tr style="height:15.6pt">
   <td width="95" rowspan="2" valign="top" style="width:71.05pt;border:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:15.6pt">
