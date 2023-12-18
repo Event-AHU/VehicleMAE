@@ -41,13 +41,13 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
  Extracted code |6zkx
 
 
-## Training and Testing 
+## Training
 
 ```bibtex
-
-CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 main.py
-
+#If you pre-training VehicleMAE using a single GPU, please run.
 CUDA_VISIBLE_DEVICES=0 python main.py
+#If you pre-training VehicleMAE using multiple GPUs, please run.
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 main.py
 ```
 
 ## Experimental Results 
