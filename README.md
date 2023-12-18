@@ -52,6 +52,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node
 
 ## Experimental Results 
 
+We used full fine-tuning to test the pre-trained model on four downstream tasks. The results are shown in the table below. 
+
 <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="620" style="width: 620px;border-collapse:collapse;border:none;height: 200px;">
  <tbody><tr style="height:15.6pt">
   <td width="95" rowspan="2" valign="top" style="width:71.05pt;border:solid windowtext 1.0pt;
@@ -479,6 +481,9 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node
   </td>
  </tr>
 </tbody></table>
+
+The four downstream tasks are vehicle attribute recognition (VAR), vehicle re-identification (V-Reid), vehicle fine-grained recognition (VFR), and vehicle partial segmentation (VPS).
+
 
 ## Visual Results 
 
