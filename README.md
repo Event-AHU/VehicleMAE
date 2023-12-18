@@ -6,7 +6,7 @@
 
 
 Official PyTorch implementation of **Structural Information Guided Multimodal Pre-training for Vehicle-centric Perception**, Xiao Wang, Wentao Wu, Chenglong Li, Zhicheng Zhao, Zhe Chen, Yukai Shi, Jin Tang, AAAI-2024 
-[[Paper]()] 
+[[arXiv](https://arxiv.org/pdf/2312.09812.pdf)] 
 
 
 
