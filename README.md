@@ -499,8 +499,17 @@ The four downstream tasks are vehicle attribute recognition (VAR), vehicle re-id
 
 
 ## Citation 
-```bibtex
 
+If you find this work helps your research, please cite the following paper and give us a star. 
+```bibtex
+@misc{wang2023structural,
+      title={Structural Information Guided Multimodal Pre-training for Vehicle-centric Perception}, 
+      author={Xiao Wang and Wentao Wu and Chenglong Li and Zhicheng Zhao and Zhe Chen and Yukai Shi and Jin Tang},
+      year={2023},
+      eprint={2312.09812},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 
