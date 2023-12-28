@@ -12,6 +12,11 @@ Official PyTorch implementation of **Structural Information Guided Multimodal Pr
 
 ## Abstract 
 
+```
+Understanding vehicles in images is important for various applications such as intelligent transportation and self-driving systems. Existing vehicle-centric works typically pre-train models on large-scale classification datasets and then fine-tune them for specific downstream tasks. However, they neglect the specific characteristics of vehicle perception in different tasks and might thus lead to sub-optimal performance. To address this issue, we propose a novel vehicle-centric pre-training framework called VehicleMAE, which incorporates the structural information including the spatial structure from vehicle profile information and the semantic structure from informative high-level natural language descriptions for effective masked vehicle appearance reconstruction. To be specific, we explicitly ex-tract the sketch lines of vehicles as a form of the spatial structure to guide vehicle reconstruction. The more comprehensive knowledge distilled from the CLIP big model 
+based on the similarity between the paired/unpaired vehicle image-text sample is further taken into consideration to help achieve a better understanding of vehicles. A large-scale dataset is built to pre-train our model, termed Autobot1M, which contains about 1M vehicle images and 12693 text information. Extensive experiments on four vehicle-based downstream tasks fully validated the effectiveness of our VehicleMAE. 
+```
+
 <p align="center">
   <img width="100%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/firstIMG.jpg" alt="firstIMG"/>
 </p> 
@@ -495,7 +500,11 @@ The four downstream tasks are vehicle attribute recognition (VAR), vehicle re-id
   <img width="80%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/attentionmaps.jpg" alt="attentionmaps"/>
 </p> 
 
+
+
 ## Acknowledgement 
+[[MAE](https://github.com/facebookresearch/mae)] 
+[[]()]
 
 
 ## Citation 
