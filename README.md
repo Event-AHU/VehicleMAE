@@ -26,7 +26,7 @@ based on the similarity between the paired/unpaired vehicle image-text sample is
 
 * **Video Tutorial for this work can be found by clicking the image below:**
 <p align="center">
-  <a href="https://youtu.be/4h9-zgXCsO8?si=SXleiNtlXzZaCFQ2">
+  <a href="https://youtu.be/IL4KUA5NAnk?si=OMeFNq9JdDvfcOoW">
     <img src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/VehicleMAE_tutorial_screeshot.png" alt="Tutorials" width="700"/>
   </a>
 </p>
