@@ -19,7 +19,7 @@ import torch.nn as nn
 import torch.distributed as dist
 import torch.backends.cudnn as cudnn
 import torch.nn.functional as F
-
+import OurDataset
 from pathlib import Path
 from PIL import Image
 from torchvision import datasets, transforms
@@ -163,7 +163,7 @@ def get_args_parser():
                         help='Softmax temp used to compute probability values for each patch')
 
     # Misc
-    parser.add_argument('--data_path', default='/home/lcl_d/wuwentao/data', type=str,help='Please specify path to the ImageNet training data.')
+    parser.add_argument('--pkl_path', default='/home/lcl_d/wuwentao/data/ourdata.pkl', type=str,help='Please specify path to the ImageNet training data.')
     parser.add_argument('--output_dir', default="/home/lcl_d/wuwentao/VehicleMAE/output", type=str, help='Path to save logs and checkpoints.')
     parser.add_argument('--clip_pre_model', default="/home/lcl_d/wuwentao/maeclip/clip_pre_model/ViT-B-16.pt", type=str, help='clip pretrain model.')
     parser.add_argument('--saveckp_freq', default=50, type=int, help='Save checkpoint every x epochs.')
@@ -175,7 +175,7 @@ def get_args_parser():
 
 def train_vehicle(args):
     utils.init_distributed_mode(args)
-    utils.fix_random_seeds(args.seed)
+    seed = utils.fix_random_seeds(args.seed)
     print("git:\n  {}\n".format(utils.get_sha()))
     print("\n".join("%s: %s" % (k, str(v)) for k, v in sorted(dict(vars(args)).items())))
     cudnn.benchmark = True
@@ -193,42 +193,20 @@ def train_vehicle(args):
             transforms.ToTensor(),
             #进行特定的均值，方差归一化（in）
             transforms.Normalize(mean=[0.446, 0.452, 0.466], std=[0.277, 0.278, 0.276])])   #[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
-    #轮廓图像
-    transform_lunkuo = transforms.Compose([
-            #随机截取一部分，然后Resize成224*224
-            transforms.RandomResizedCrop(args.input_size, scale=(0.2, 1.0), interpolation=InterpolationMode.BICUBIC),  # 3 is bicubic
-            #transforms.Resize([224,224]),
-            #随机翻转
-            transforms.RandomHorizontalFlip(),
-            #将图像变为0~1的浮点数
-            transforms.ToTensor(),
-            #将图像根目录传进去，将transform的操作传过去，dataset_train为正态分布后的数据
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
-    dataset_train = datasets.ImageFolder(os.path.join(args.data_path,'ourdata'), transform=transform_train)    #构建rgb数据
-    dataset_lunkuo = datasets.ImageFolder(os.path.join(args.data_path,'oudata_lunkuo'), transform=transform_lunkuo)    #构建轮廓数据
 
-    sampler_rgb = torch.utils.data.DistributedSampler(dataset_train, shuffle=True)
-    sampler_lunkuo =  torch.utils.data.DistributedSampler(dataset_lunkuo, shuffle=True)
-    np.random.seed(args.seed)
+    dataset_train = OurDataset.OurDataset(args.pkl_path, seed, transform=transform_train)
+
+    sampler_train = torch.utils.data.DistributedSampler(dataset_train, shuffle=True)
+
     data_loader_train = torch.utils.data.DataLoader(
-        dataset_train, sampler=sampler_rgb,
+        dataset_train, sampler=sampler_train,
         batch_size=args.batch_size_per_gpu,
         num_workers=args.num_workers,
         pin_memory=args.pin_mem,
         drop_last=True,
     )#从这拿到的都是minibatch
-    np.random.seed(args.seed)
-    data_loader_train_lunkuo = torch.utils.data.DataLoader(
-        dataset_lunkuo, sampler=sampler_lunkuo,
-        batch_size=args.batch_size_per_gpu,
-        num_workers=args.num_workers,
-        pin_memory=args.pin_mem,
-        drop_last=True,
-    )#从这拿到的都是minibatch
-
 
     print(f"Data loaded: there are {len(dataset_train)} images.")
-    print(f"Data loaded: there are {len(dataset_lunkuo)} images.")
 
     # ============ building student,teacher_clip and teacher networks ... ============
     # we changed the name DeiT-S for ViT-S to avoid confusions
@@ -367,12 +345,11 @@ def train_vehicle(args):
     print("Starting our training!")
     for epoch in range(start_epoch, args.epochs):
         data_loader_train.sampler.set_epoch(epoch)
-        data_loader_train_lunkuo.sampler.set_epoch(epoch)
 
         # ============ training one epoch of iBOT ... ============
         
         train_stats = train_one_epoch(student, teacher,teacher_clip, teacher_without_ddp,teacher_clip_without_ddp, VehicleMAE_loss,
-            data_loader_train,data_loader_train_lunkuo, optimizer, device,lr_schedule, wd_schedule, momentum_schedule,
+            data_loader_train, optimizer, device,lr_schedule, wd_schedule, momentum_schedule,
             epoch, fp16_scaler, args)
         
 
@@ -409,7 +386,7 @@ def train_vehicle(args):
     print('Training time {}'.format(total_time_str))
 
 
-def train_one_epoch(student, teacher,teacher_clip, teacher_without_ddp,teacher_clip_without_ddp, VehicleMAE_loss, data_loader,data_loader_lunkuo,
+def train_one_epoch(student, teacher,teacher_clip, teacher_without_ddp,teacher_clip_without_ddp, VehicleMAE_loss, data_loader,
                     optimizer, device: torch.device,lr_schedule, wd_schedule, momentum_schedule,epoch,
                     fp16_scaler, args):
   
@@ -432,7 +409,7 @@ def train_one_epoch(student, teacher,teacher_clip, teacher_without_ddp,teacher_c
     params_k = [param_k for name_k, param_k in zip(names_k, params_k) if name_k in names_common]
     params_p = [param_p for name_p, param_p in zip(names_p, params_p) if name_p in names_common]
 
-    for (it, (images, _)),( _, (images_lunkuo, _)) in zip(enumerate(metric_logger.log_every(data_loader, 20, header)),enumerate(metric_logger.log_every(data_loader_lunkuo, 20, header))):
+    for it, (rgb_samples, tir_samples) in enumerate(metric_logger.log_every(data_loader, 20, header)):
         # update weight decay and learning rate according to their schedule
         it = len(data_loader) * epoch + it  # global training iteration
         for i, param_group in enumerate(optimizer.param_groups):
@@ -441,8 +418,8 @@ def train_one_epoch(student, teacher,teacher_clip, teacher_without_ddp,teacher_c
                 param_group["weight_decay"] = wd_schedule[it]
 
         # move images to gpu      
-        images = images.to(device, non_blocking=True)
-        images_lunkuo =images_lunkuo.to(device, non_blocking=True)
+        images = rgb_samples.to(device, non_blocking=True)
+        images_lunkuo =tir_samples.to(device, non_blocking=True)
         
         with torch.cuda.amp.autocast(fp16_scaler is not None):
             student_output,student_loss,masks,_,_,tezheng = student(images, mask_ratio=args.mask_ratio)
