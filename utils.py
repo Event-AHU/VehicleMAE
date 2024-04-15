@@ -139,6 +139,7 @@ def fix_random_seeds(seed=31):
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
     np.random.seed(seed)
+    return seed
 
 
 class SmoothedValue(object):
