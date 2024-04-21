@@ -524,18 +524,18 @@ class MultiCropWrapper(nn.Module):
         else:
             self.head = head
 
-    def forward(self, x, box, angle, mask_ratio=None, return_backbone_feat=False):
+    def forward(self, x, mask_ratio=None, return_backbone_feat=False):
         # convert to list
         if mask_ratio != 0:
             t = 0
-            _out,loss,out_mask,ids_restore,clip_tezheng = self.backbone(x, box, angle, mask_ratio)
+            _out,loss,out_mask,ids_restore,clip_tezheng = self.backbone(x, mask_ratio)
             t = _out.size(0)
 
             output_new = self.head(_out)
 
             return output_new,loss,out_mask,ids_restore,t,clip_tezheng
         else:
-            _out = self.backbone(x, box, angle, mask_ratio)
+            _out = self.backbone(x, mask_ratio)
 
             output_new = self.head(_out)
 
