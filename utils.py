@@ -524,40 +524,22 @@ class MultiCropWrapper(nn.Module):
         else:
             self.head = head
 
-    def forward(self, x, mask=None, return_backbone_feat=False, 
-                **kwargs):
+    def forward(self, x, box, angle, mask_ratio=None, return_backbone_feat=False):
         # convert to list
-        t = 0
-        if not isinstance(x, list):
-            x = [x]
-            mask = [mask] if mask is not None else None
-        idx_crops = torch.cumsum(torch.unique_consecutive(
-            torch.tensor([inp.shape[-1] for inp in x]),
-            return_counts=True,
-        )[1], 0)
-        start_idx = 0
-        for end_idx in idx_crops:
-            inp_x = torch.cat(x[start_idx: end_idx])
-
-            if mask is not None:
-                inp_m = torch.cat(mask[start_idx: end_idx])
-                kwargs.update(dict(mask=inp_m))
-
-            _out,loss,out_mask,ids_restore,clip_tezheng = self.backbone(inp_x, **kwargs)
+        if mask_ratio != 0:
+            t = 0
+            _out,loss,out_mask,ids_restore,clip_tezheng = self.backbone(x, box, angle, mask_ratio)
             t = _out.size(0)
-            if start_idx == 0:
-                output = _out
-            else:
-                output = torch.cat((output, _out))
-            start_idx = end_idx
-        # Run the head forward on the concatenated features.
-        #print(type(output))
 
-        output_new = self.head(output)
-        if return_backbone_feat:
-            return output, output_new
-        return output_new,loss,out_mask,ids_restore,t,clip_tezheng
+            output_new = self.head(_out)
 
+            return output_new,loss,out_mask,ids_restore,t,clip_tezheng
+        else:
+            _out = self.backbone(x, box, angle, mask_ratio)
+
+            output_new = self.head(_out)
+
+            return output_new
 
 def get_params_groups(model):
     regularized = []
