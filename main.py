@@ -423,7 +423,7 @@ def train_one_epoch(student, teacher,teacher_clip, teacher_without_ddp,teacher_c
         
         with torch.cuda.amp.autocast(fp16_scaler is not None):
             student_output,student_loss,masks,_,_,tezheng = student(images, mask_ratio=args.mask_ratio)
-            teacher_output,_,_,_,_,_ = teacher(images_lunkuo,mask_ratio = 0)
+            teacher_output = teacher(images_lunkuo,mask_ratio = 0)
             similarity_loss,kl_distance_loss = teacher_clip(images,tezheng)
 
             student_loss = ((student_loss * masks).sum() / masks.sum())*4
