@@ -278,15 +278,15 @@ class MaskedAutoencoderViT(nn.Module):#基于vit实现的mae
     def no_weight_decay(self):
         return {'pos_embed', 'cls_token', 'mask_token'}
     
-    def forward(self, imgs, box, angle,mask_ratio):#结合返回
+    def forward(self, imgs, mask_ratio):#结合返回
         if mask_ratio != 0:
-            latent, mask, ids_restore = self.forward_encoder(imgs, box, angle, mask_ratio)
+            latent, mask, ids_restore = self.forward_encoder(imgs, mask_ratio)
             pred,tezheng,clip_tezheng = self.forward_decoder(latent, ids_restore)  # [N, L, p*p*3]
 
             loss= self.forward_loss(imgs, pred, mask)
             return tezheng,loss,mask,ids_restore,clip_tezheng
         else:
-            latent, mask, ids_restore = self.forward_encoder(imgs, box, angle, mask_ratio)
+            latent, mask, ids_restore = self.forward_encoder(imgs, mask_ratio)
             latent = self.decoder_embed(latent)
 
             return latent
