@@ -49,7 +49,8 @@ based on the similarity between the paired/unpaired vehicle image-text sample is
 
 ## Dataset Download 
 
-Link ：[download](https://pan.baidu.com/s/1VE0V6cuimfZ3qZCILwwORA?pwd=tpds)
+Baidu Netdisk Link ：[download](https://pan.baidu.com/s/1VE0V6cuimfZ3qZCILwwORA?pwd=tpds) /
+
 Extracted code ：tpds
 
 <p align="center">
