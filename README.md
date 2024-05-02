@@ -48,15 +48,14 @@ based on the similarity between the paired/unpaired vehicle image-text sample is
 
 
 ## Dataset Download 
-
-Baidu Netdisk Link ：[download](https://pan.baidu.com/s/1VE0V6cuimfZ3qZCILwwORA?pwd=tpds) 
+ 
 Extracted code ：tpds
 
 <p align="center">
   <img width="100%" src="https://github.com/Event-AHU/VehicleMAE/blob/main/figures/data_show.jpg" alt="data_show"/>
 </p> 
 
-TO BE UPDATE ... 
+Baidu Netdisk Link ：[download](https://pan.baidu.com/s/1VE0V6cuimfZ3qZCILwwORA?pwd=tpds)
 
 ## Pre-trained Model Download
  Pre-trained Model  | Vit-base 
