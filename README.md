@@ -46,6 +46,7 @@ based on the similarity between the paired/unpaired vehicle image-text sample is
 
 ## Environment Setting 
 
+Configure the environment according to the content of the requirements.txt file.
 
 ## Dataset Download 
  
