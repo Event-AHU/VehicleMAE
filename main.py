@@ -194,7 +194,7 @@ def train_vehicle(args):
             #进行特定的均值，方差归一化（in）
             transforms.Normalize(mean=[0.446, 0.452, 0.466], std=[0.277, 0.278, 0.276])])   #[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
 
-    dataset_train = OurDataset.OurDataset(args.pkl_path, seed, transform=transform_train)
+    dataset_train = OurDataset.OurDataset(args.pkl_path, transform=transform_train)
 
     sampler_train = torch.utils.data.DistributedSampler(dataset_train, shuffle=True)
 
