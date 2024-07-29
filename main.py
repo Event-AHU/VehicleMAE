@@ -394,20 +394,16 @@ def train_one_epoch(student, teacher,teacher_clip, teacher_without_ddp,teacher_c
     header = 'Epoch: [{}]'.format(epoch)
     
     # common params
-    names_q, params_q, names_k, params_k,names_p,params_p = [], [], [], [],[],[]
+    names_q, params_q, names_k, params_k = [], [], [], []
     for name_q, param_q in student.module.named_parameters():
         names_q.append(name_q)
         params_q.append(param_q)
     for name_k, param_k in teacher_without_ddp.named_parameters():
         names_k.append(name_k)
         params_k.append(param_k)
-    for name_p, param_p in teacher_clip_without_ddp.named_parameters():
-        names_p.append(name_p)
-        params_p.append(param_p)
-    names_common = list(set(names_q) & set(names_k) & set(names_p))
+    names_common = list(set(names_q) & set(names_k))
     params_q = [param_q for name_q, param_q in zip(names_q, params_q) if name_q in names_common]
     params_k = [param_k for name_k, param_k in zip(names_k, params_k) if name_k in names_common]
-    params_p = [param_p for name_p, param_p in zip(names_p, params_p) if name_p in names_common]
 
     for it, (rgb_samples, tir_samples) in enumerate(metric_logger.log_every(data_loader, 20, header)):
         # update weight decay and learning rate according to their schedule
@@ -472,8 +468,6 @@ def train_one_epoch(student, teacher,teacher_clip, teacher_without_ddp,teacher_c
             m = momentum_schedule[it]  # momentum parameter
             for param_q, param_k in zip(params_q, params_k):
                 param_k.data.mul_(m).add_((1 - m) * param_q.detach().data)
-            for param_q, param_p in zip(params_q, params_p):
-                param_p.data.mul_(m).add_((1 - m) * param_q.detach().data)
 
         # logging
         torch.cuda.synchronize()
